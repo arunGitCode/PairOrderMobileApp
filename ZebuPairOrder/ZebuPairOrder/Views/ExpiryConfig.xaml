@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebuPairOrder.Views.ExpiryConfig"
+             xmlns:vm="clr-namespace:ZebuPairOrder.ViewModels" >
+
+    <Shell.TitleView>
+        <Label Text="Expiry Config" HorizontalTextAlignment="Center" Margin="0,0,10,0" Padding="0" VerticalTextAlignment="Center" TextColor="White" FontSize="20"/>
+    </Shell.TitleView>
+    
+    <ContentPage.BindingContext>
+        <vm:ExpiryConfigViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="3" Padding="15">
+                <Label Text="UserId" FontSize="Medium" />
+                <Entry Text="{Binding UserId, Mode=TwoWay}" FontSize="Medium" />
+
+                <Label Text="ApiKey" FontSize="Medium" />
+                <Entry Text="{Binding ApiKey, Mode=TwoWay}" IsPassword="True" FontSize="Medium" Margin="0" />
+                
+                <Label Text="ExpiryDate" FontSize="Medium" />
+                <Entry Text="{Binding ExpiryDate, Mode=TwoWay}" FontSize="Medium" />
+                
+                <Label Text="ExpiryMonth" FontSize="Medium" />
+                <Entry Text="{Binding ExpiryMonth, Mode=TwoWay}" FontSize="Medium" />
+                
+                <Label Text="Year" FontSize="Medium" />
+                <Editor Text="{Binding Year, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+
+                <Label Text="Quantity" FontSize="Medium" />
+                <Editor Text="{Binding Quantity, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

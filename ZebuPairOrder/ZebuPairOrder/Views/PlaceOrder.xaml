@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebuPairOrder.Views.PlaceOrder"
+             Title="{Binding Title}" NavigationPage.HasNavigationBar="True">
+
+    <Shell.TitleView>
+        <Label Text="Place Order" HorizontalTextAlignment="Center" Margin="0,0,10,0" Padding="0" VerticalTextAlignment="Center" TextColor="White" FontSize="20"/>
+    </Shell.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <Label Text="Enter The ATM Strike For Straddle!"
+               HorizontalOptions="Center" />
+            <Entry x:Name="ATMStrike" Text= ""/>
+
+            <Label Text="Enter The Straddle Type!"
+               HorizontalOptions="Center" />
+            <Entry x:Name="OrderType" Text= "" Placeholder="SELL" />
+
+            <Label Text="" HorizontalOptions="Center"  FontSize="Large"/>
+
+            <Button Text="Place Order" Clicked="PlaceOrderToBroker"/>
+           
+            <Label  Text="" HorizontalOptions="Center" FontSize="Large"/>
+
+            <Label x:Name="lblResponseStatus" Text="" HorizontalOptions="Center" FontSize="Large"/>
+            
+            <Label Text="" HorizontalOptions="Center" FontSize="Large"/>
+
+            <Label x:Name="lblResponseMessage" Text="" HorizontalOptions="Center" FontSize="Large"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
